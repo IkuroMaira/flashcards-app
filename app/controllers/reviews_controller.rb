@@ -1,9 +1,11 @@
 class ReviewsController < ApplicationController
   def show
-    @deck = Deck.find(params[deck_id])
+    @deck = Deck.find(params[:deck_id])
     @cards = @deck.cards
-    # position = params[position]
-    @card = @deck.cards.where(card_id: position)
-    @position =
+    position = (params[:position] || 0).to_i
+    # Dans Rails, params est un hash (l'équivalent d'un objet JS), et ses clés sont des symboles.
+    # Donc pour accéder à la valeur, on doit utiliser la bonne clé — :position et pas position (qui serait une variable).
+    @card = @cards[position]
+    @position = position
   end
 end

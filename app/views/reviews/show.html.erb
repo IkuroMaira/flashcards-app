@@ -1,1 +1,7 @@
 <h1>Review <%= @deck.name %></h1>
+<p>Position : <%= @position %> / <%= @cards.count %></p>
+
+<h3><%= @card.question %></h3>
+
+<%= link_to 'Précédent', deck_review_path(@deck, position: @position - 1) %>
+<%= link_to 'Suivant', deck_review_path(@deck, position: @position + 1) %>
