@@ -1,6 +1,6 @@
 class DecksController < ApplicationController
   def index
-    @decks = Deck.all
+    @decks = Deck.includes(:cards)
   end
 
   def show
