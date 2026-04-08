@@ -1,5 +1,9 @@
-<ul>
-  <% @decks.each do |deck| %>
-    <li><%= link_to deck.name, deck %></li>
-  <% end %>
-</ul>
+<div>
+  <h1>Mes decks</h1>
+
+  <div class="grid grid-cols-2 gap-4">
+    <% @decks.each do |deck| %>
+      <%= link_to deck.name, deck, class: "bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow" %>
+    <% end %>
+  </div>
+</div>
