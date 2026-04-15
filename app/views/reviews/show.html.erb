@@ -9,14 +9,14 @@
     </p>
   </div>
 
-  <div class="flex-col w-full h-full max-w-4xl flex items-center justify-center p-4">
+  <div class="flex-col w-full h-full max-w-4xl flex items-center justify-center p-6">
     <turbo-frame id="card-content" class="flex flex-col bg-white rounded-xl shadow-2xl p-6 w-full h-full">
       <h3 class="text-blue-600 p-2">
         <%= @card.question %>
       </h3>
 
       <% if @answer %>
-        <p class="rounded-xl bg-indigo-100 text-blue-600 p-4 font-sans">
+        <p class="rounded-xl bg-indigo-100 text-blue-600 p-4 font-sans animate-fade-in">
           <%= @answer %>
         </p>
       <% else %>
